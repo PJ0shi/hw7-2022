@@ -59,11 +59,16 @@ document.querySelector("#mute").addEventListener("click", function() {
 	}
 });
 
-document.querySelector("#slider").addEventListener("change", function(){
-    console.log("I am in slider!");
-    video.volume = this.value/100 + "%";
-	console.log(video.volume);
+
+document.querySelector("#slider").addEventListener("click", function(){
+	console.log("The current value is", video.volume)
+	video.volume = this.value/100
+	console.log("The current value is", video.volume)
+	console.log(document.querySelector("#volume"))
+	document.querySelector("#volume").innerHTML = video.volume *100 + "%"
 });
+
+
 
 document.querySelector("#vintage").addEventListener("click", function() {
 	console.log("vintage");
